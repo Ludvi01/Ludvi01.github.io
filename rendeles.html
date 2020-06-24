@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <label for="feltetSelect1">Feltét</label>
                         <select class="form-control" id="feltetSelect1">
-                            <option>Semmi</option>
+                            <option></option>
                             <option>Dupla sajt</option>
                             <option>Dupla hús</option>
                             <option>Csipős szósz</option>
@@ -28,12 +28,13 @@
                     </div>
                     <div class="form-group">
                         <label for="amountinput">Mennyiség</label>
-                        <input type="number" id="amountinput" name="amount-input" class="form-control">
+                        <input type="number" id="amountinput" name="amount-input" min="1" max="10"
+                            onchange="calcAmount()" class="form-control">
                     </div>
                     <div class="form-group">
                         Fizetendő: <span class="show-amount">0</span>Ft
                     </div>
-                    <button onclick="calcAmount()" type="button" class="btn btn-primary">Megrendelés</button>
+                    <button type="button" class="btn btn-primary">Megrendelés</button>
                 </form>
             </div>
             <div class="col-3"></div>
