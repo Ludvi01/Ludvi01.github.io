@@ -1,6 +1,6 @@
 function calcAmount() {
     let price = 1000;
-    let amountInput = document.querySelector("input[name='amount-input']");
+    let amountInput = document.querySelector("#amountinput");
     let amountNumber = parseInt(amountInput.value);
     amountNumber = isNaN(amountNumber) ? 0 : amountNumber;
 
@@ -22,3 +22,21 @@ function feltetSmall() {
     parent.appendChild(helpText);
 }
 feltetSmall();
+
+let feltetek = [
+    "Szalonna",
+    "Hagyma",
+    "Csipős szósz",
+    "Extra sonka",
+    "Dupla hús",
+    "Dupla sajt",
+]
+let feltetekSelect = document.querySelector("#feltetSelect")
+let felteti = 0;
+while (felteti < feltetek.length) {
+    let option = document.createElement("option");
+    option.value = felteti;
+    option.innerHTML = feltetek[felteti];
+    feltetekSelect.appendChild(option);
+    felteti++;
+}

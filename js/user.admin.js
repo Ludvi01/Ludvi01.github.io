@@ -18,22 +18,38 @@ let users = [
     Sex: "Male",
     Activ: true
   },
+  {
+    Firstname: "Lakatos",
+    Lastname: "Brendon",
+    Username: "Brendon",
+    Email: "brendon@gmail.com",
+    Permisson: "User",
+    Age: 32,
+    Sex: "Male",
+    Activ: true
+  },
 ];
 
 function tableMarkupFromObjectArray(obj) {
 
   let headers = `
-  <th>ID</th>
+  <th>#</th>
   ${Object.keys(obj[0]).map((col) => {
     return `<th>${col}</th>`
-  }).join('')}`
+  }).join('')}
+  <th>Buttons</th>`
 
   let content = obj.map((row, idx) => {
     return `<tr>
-      <td>${idx}</td>
-      ${Object.values(row).map((datum) => {
-      return `<td>${datum}</td>`
+      <td>${idx + 1}</td>
+      ${Object.values(row).map((head) => {
+      return `<td>${head}</td>`
     }).join('')}
+    <td><div class="btn-group" role="group">
+    <button type="button" class="btn btn-info">
+      <i class="far fa-edit"></i></button>
+    <button type="button" class="btn btn-danger">
+      <i class="far fa-trash-alt"></i></button></div></td>
     </tr>
 `}).join('')
 
@@ -41,7 +57,6 @@ function tableMarkupFromObjectArray(obj) {
   <table>
   <thead>
   ${headers}
-
   </thead>
   <tbody>
   ${content}
