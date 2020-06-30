@@ -7,33 +7,33 @@ $(document).ready(function () {
   });
 });
 
-let users = [
-  {
-    Firstname: "Ludvány",
-    Lastname: "Marci",
-    Username: "Ludvi",
-    Email: "ludvi4@gmail.com",
-    Permisson: "Admin",
-    Age: 18,
-    Sex: "Male",
-    Activ: true
-  },
-  {
-    Firstname: "Lakatos",
-    Lastname: "Brendon",
-    Username: "Brendon",
-    Email: "brendon@gmail.com",
-    Permisson: "User",
-    Age: 32,
-    Sex: "Male",
-    Activ: true
-  },
-];
+let userURL = "http://localhost:3000/users";
+function getServerData(url) {
+  let fetchOptions = {
+    method: "GET",
+    mode: "cors",
+    cache: "no-cache"
+  };
+
+  return fetch(url, fetchOptions).then(
+    Response => Response.json(),
+    err => console.error(err)
+  );
+}
+
+getServerData(userURL).then(
+  data => document.querySelector("#userTable").innerHTML = tableMarkupFromObjectArray(data)
+);
+
+document.querySelector("#updatebtn").addEventListener("click", function() {
+  getServerData(userURL).then(
+    data => document.querySelector("#userTable").innerHTML = tableMarkupFromObjectArray(data)
+  );  
+})
+
 
 function tableMarkupFromObjectArray(obj) {
-
   let headers = `
-  <th>#</th>
   ${Object.keys(obj[0]).map((col) => {
     return `<th>${col}</th>`
   }).join('')}
@@ -41,7 +41,6 @@ function tableMarkupFromObjectArray(obj) {
 
   let content = obj.map((row, idx) => {
     return `<tr>
-      <td>${idx + 1}</td>
       ${Object.values(row).map((head) => {
       return `<td>${head}</td>`
     }).join('')}
@@ -65,5 +64,3 @@ function tableMarkupFromObjectArray(obj) {
   `
   return tablemarkup
 }
-
-document.querySelector("#userTable").innerHTML = tableMarkupFromObjectArray(users)
