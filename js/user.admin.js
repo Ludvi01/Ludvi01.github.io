@@ -45,9 +45,9 @@ function tableMarkupFromObjectArray(obj) {
       return `<td>${head}</td>`
     }).join('')}
     <td><div class="btn-group" role="group">
-    <button type="button" class="btn btn-info">
+    <button type="button" class="btn btn-info" onclick="getInfo(this)">
       <i class="far fa-edit"></i></button>
-    <button type="button" class="btn btn-danger">
+    <button type="button" class="btn btn-danger" onclick="delRow(this)">
       <i class="far fa-trash-alt"></i></button></div></td>
     </tr>
 `}).join('')
@@ -63,4 +63,15 @@ function tableMarkupFromObjectArray(obj) {
   </table>
   `
   return tablemarkup
+}
+
+function delRow(btn) {
+  let tr = btn.parentElement.parentElement.parentElement;
+let id = tr.querySelector("td:first-child").innerHTML;
+  let fetchOptions = {
+    method: "DELETE",
+    mode: "cors",
+    cache: "no-cache"
+  };
+  fetch(`${userURL}/${id}`, fetchOptions);
 }
