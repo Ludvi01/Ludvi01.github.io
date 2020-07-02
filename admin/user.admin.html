@@ -17,7 +17,37 @@
       <h1>Felhasználók kezelése</h1>
       <button id="updatebtn" type="button" class="btn"><i class="fas fa-sync"></i> Update</button>
     </center>
-    <input class="form-control" id="searchInput" type="text" placeholder="Search..">    
+    <table class="table" id="addUser">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Permisson</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Activ</th>
+          <th>Buttons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" name="id" class="form-control"></td>
+          <td><input type="text" name="Firstname" class="form-control"></td>
+          <td><input type="text" name="Lastname" class="form-control"></td>
+          <td><input type="text" name="Username" class="form-control"></td>
+          <td><input type="text" name="Email" class="form-control"></td>
+          <td><input type="text" name="Permisson" class="form-control" value="User"></td>
+          <td><input type="text" name="Age" class="form-control"></td>
+          <td><input type="text" name="Sex" class="form-control"></td>
+          <td><input type="text" name="Activ" class="form-control" value="true"></td>
+          <td><button class="btn btn-success" onclick="createUser(this)">+</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <input class="form-control" id="searchInput" type="text" placeholder="Search..">
     <table class="table table-bordered table-striped table-dark" id="userTable">
     </table>
 

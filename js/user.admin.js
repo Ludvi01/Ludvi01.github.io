@@ -21,16 +21,15 @@ function getServerData(url) {
   );
 }
 
-getServerData(userURL).then(
-  data => document.querySelector("#userTable").innerHTML = tableMarkupFromObjectArray(data)
-);
-
-document.querySelector("#updatebtn").addEventListener("click", function() {
+function startGetUsers() {
   getServerData(userURL).then(
     data => document.querySelector("#userTable").innerHTML = tableMarkupFromObjectArray(data)
   );  
-})
+}
 
+startGetUsers();
+
+document.querySelector("#updatebtn").addEventListener("click", startGetUsers)
 
 function tableMarkupFromObjectArray(obj) {
   let headers = `
@@ -73,5 +72,27 @@ let id = tr.querySelector("td:first-child").innerHTML;
     mode: "cors",
     cache: "no-cache"
   };
-  fetch(`${userURL}/${id}`, fetchOptions);
+  fetch(`${userURL}/${id}`, fetchOptions).then(
+    resp => resp.json(),
+    err => console.error(err)
+  ).then(
+    data => {
+      startGetUsers();
+    }
+  );
+}
+
+function createUser(btn) {
+  let tr = btn.parentElement.parentElement;
+  let data = getRowData(tr);
+  console.log(data);
+}
+
+function getRowData(tr) {
+  let inputs = tr.querySelectorAll=("input.form-control");
+  let data = {};
+  for (let i = 0; i < inputs.length; i++) {
+    data[inputs[i].name] = inputs[i].value;
+  }
+  return data;
 }

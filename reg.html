@@ -19,18 +19,44 @@
                     <center>
                         <h1>Regisztrációs felület</h1>
                     </center>
+                    <br>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email cím</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+                        <label for="InputFirstname">Neved:</label>
+                        <input type="text" id="InputFirstname" required>
+                        <input type="text" id="InputLastname" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Jelszó</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="InputUsername">felhasználónév</label>
+                        <input type="text" class="form-control" id="InputUsername" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Jelszó megerősítése</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                        <small id="passwordHelp" class="form-text text-muted">Ne add meg senkinek a jelszavadat!</small>
+                        <label for="InputEmail">E-mail cím</label>
+                        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
+                            placeholder="name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <p>Jogosultságok:</p>
+                        <input type="radio" id="User" name="Permisson" value="User">
+                        <label for="User">User</label><br>
+                        <input type="radio" id="Admin" name="Permisson" value="Admin" required>
+                        <label for="Admin">Admin</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputAge">Életkorod</label>
+                        <input type="date" class="form-control" id="InputAge">
+                    </div>
+                    <div class="form-group">
+                        <p>Minek érzed magad?</p>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="Activ">Akarod használni?</label>
+                        <input type="checkbox" id="Activ">
                     </div>
                     <button type="submit" class="btn btn-warning">Regisztráció</button>
                     <a role="button" href="/login.html" class="btn btn-primary">Belépés</a>
