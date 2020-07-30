@@ -1,37 +1,15 @@
 {
   "users": [
     {
-      "id": 1,
       "Firstname": "Ludvány",
-      "Lastname": "Marci",
+      "Lastname": "Marcell",
       "Username": "Ludvi",
       "Email": "ludvi4@gmail.com",
-      "Permisson": "Admin",
-      "Age": 18,
-      "Sex": "Male",
-      "Activ": true
-    },
-    {
-      "id": 2,
-      "Firstname": "Lakatos",
-      "Lastname": "Brendon",
-      "Username": "Brendon",
-      "Email": "brendon@gmail.com",
-      "Permisson": "User",
-      "Age": 32,
-      "Sex": "Male",
-      "Activ": true
-    },
-    {
-      "id": 3,
-      "Firstname": "Lakatos",
-      "Lastname": "Brendon",
-      "Username": "Brendon",
-      "Email": "brendon@gmail.com",
-      "Permisson": "User",
-      "Age": 32,
-      "Sex": "Male",
-      "Activ": true
+      "Permisson": "admin",
+      "Age": "18",
+      "Sex": "male",
+      "Activ": "true",
+      "id": 1
     }
   ]
 }
