@@ -3,22 +3,18 @@
   "version": "1.0.0",
   "description": "Az elérési helyre mutató link: https://Ludvi01.github.io",
   "main": "sql.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Ludvi01",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ludvi01/Ludvi01.github.io.git"
   },
-  "author": "Ludvi01",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ludvi01/Ludvi01.github.io/issues"
   },
-  "homepage": "https://github.com/Ludvi01/Ludvi01.github.io#readme",
+  "homepage": "https://github.com/Ludvi01/Ludvi01.github.io",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "node": "^14.5.0"
+    "mysql": "^2.18.1"
   }
 }
