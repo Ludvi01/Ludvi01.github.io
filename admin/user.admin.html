@@ -10,52 +10,37 @@
 </head>
 
 <body>
+
   <div w3-include-html="/menu.html"></div>
 
-  <div class="table-responsive">
-    <center>
-      <h1>Felhasználók kezelése</h1>
-      <button id="updatebtn" type="button" class="btn"><i class="fas fa-sync"></i> Update</button>
-    </center>
-    <table class="table" id="addUser">
-      <thead>
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Username</th>
-          <th>Email</th>
-          <th>Permisson</th>
-          <th>Age</th>
-          <th>Sex</th>
-          <th>Activ</th>
-          <th>Buttons</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input type="text" name="Firstname" class="form-control"></td>
-          <td><input type="text" name="Lastname" class="form-control"></td>
-          <td><input type="text" name="Username" class="form-control"></td>
-          <td><input type="text" name="Email" class="form-control"></td>
-          <td><input type="text" name="Permisson" class="form-control" value="user"></td>
-          <td><input type="text" name="Age" class="form-control"></td>
-          <td><input type="text" name="Sex" class="form-control"></td>
-          <td><input type="text" name="Activ" class="form-control" value="true"></td>
-          <td><button class="btn btn-success" onclick="createUser(this)">+</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <input class="form-control" id="searchInput" type="text" placeholder="Search..">
-    <table class="table table-bordered table-striped table-dark" id="userTable">
-    </table>
+  <center>
+    <h1>Felhasználók kezelése</h1>
+    <button id="getDataBtn" type="button" class="btn"><i class="fas fa-sync"></i> Update</button>
+  </center>
+  
+  <table id="userTable" class="table table-striped">
+    <thead>
+      <th class="">ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Permisson</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Activ</th>
+      <th>Buttons</th>
+    </thead>
+    <tbody></tbody>
+  </table>
 
-    <!--                                JS Script run                                -->
+  <!--                                JS Script run                                -->
 
-    <script src="/js/menu.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="/js/user.admin.js"></script>
+  <script src="/js/menu.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="/js/user.admin.js"></script>
 </body>
 
 </html>

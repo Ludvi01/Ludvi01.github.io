@@ -20,3 +20,5 @@ switch (weekDay) {
 }
 
 document.getElementById("mainap").innerHTML = dayName
+
+
