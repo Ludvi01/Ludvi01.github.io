@@ -6,17 +6,17 @@ $email = $_POST['email'];
 $phoneCode = $_POST['phoneCode'];
 $phone = $_POST['phone'];
 if (!empty($username) || !empty($password) || !empty($gender) || !empty($email) || !empty($phoneCode) || !empty($phone)) {
- $host = "localhost";
-    $dbUsername = "root";
-    $dbPassword = "";
-    $dbname = "youtube";
+ $host = "192.168.1.10";
+    $dbUsername = "MySite";
+    $dbPassword = "XtvAqOgg9l1me4BX";
+    $dbname = "mysite";
     //create connection
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
     if (mysqli_connect_error()) {
      die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
-     $SELECT = "SELECT email From register Where email = ? Limit 1";
-     $INSERT = "INSERT Into register (username, password, gender, email, phoneCode, phone) values(?, ?, ?, ?, ?, ?)";
+     $SELECT = "SELECT email From account Where email = ? Limit 1";
+     $INSERT = "INSERT Into account (username, password, gender, email, phoneCode, phone) values(?, ?, ?, ?, ?, ?)";
      //Prepare statement
      $stmt = $conn->prepare($SELECT);
      $stmt->bind_param("s", $email);
